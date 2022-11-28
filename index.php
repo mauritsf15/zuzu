@@ -1,5 +1,12 @@
 <?php
-    //
+    date_default_timezone_set('Europe/Amsterdam');
+    $hourNow = date('H');
+    $text = match(intval($hourNow)) {
+        24, 0, 1, 2, 3, 4, 5 => 'Goedenacht',
+        6, 7, 8, 9, 10, 11 => 'Goedenochtend',
+        12, 13, 14, 15, 16, 17 => 'Goedenmiddag',
+        18, 19, 20, 21, 22, 23 => 'Goedenavond'
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +39,7 @@
                 <div class="col-10 col-md-5">
                     <br>
                     <p class="head-two">Over ons</p>
-                    <p class="description">Zuzu Sushi combineert kwaliteit en cultuur sinds 1991.<br>
+                    <p class="description"><?= $text ?>! Zuzu Sushi combineert kwaliteit en cultuur sinds 1991.<br>
                     We bevinden ons in de mooie stad Leiden op de Beestenmarkt.<br>
                     U kunt nu ook online bestellen!</p>
                     <br>

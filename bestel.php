@@ -1,5 +1,12 @@
 <?php
     session_start();
+
+    if (isset($_GET['e'])) {
+        $error = $_GET['e'];
+        if ($error == 'tm') {
+            echo 'Iets ging verkeerd, probeer het opnieuw.';
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,8 +35,8 @@
         <br><br>
         <main>
             <div class="row">
-                <div class="col-2"></div>
-                <form class="col-8 row g-3 needs-validation start-form" action="bestel-2.php" method="post" autocomplete="on">
+                <div class="col-1 col-md-2"></div>
+                <form class="col-10 col-md-8 row g-3 start-form" action="bestel-2.php" method="post" autocomplete="on">
                     <div class="col-6">
                         <label for="firstname" class="form-label">Voornaam</label>
                         <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Jan" required>
@@ -60,7 +67,7 @@
                     </div>
                     <div class="col-12 col-md-4"></div>
                     <div class="col-12 col-md-4">
-                        <input type="submit" name="submit" class="btn btn-primary">
+                        <input type="submit" name="submit" class="btn btn-primary" value="Volgende pagina">
                     </div>
                     <div class="col-12 col-md-4 form-check form-switch">
                         <input class="form-check-input complete-switch form-label" type="checkbox" role="switch" id="switch" checked>

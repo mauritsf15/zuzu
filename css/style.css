@@ -4,9 +4,13 @@ body {
     color: black;
 }
 
-div {
-    outline: 1px solid red !important;
-    background-color: rgba(0,0,0,0.2);
+/*div {*/
+/*    outline: 1px solid red !important;*/
+/*    background-color: rgba(0,0,0,0.2);*/
+/*}*/
+
+.container {
+    width: 100% !important;
 }
 
 header a.btn {
@@ -69,6 +73,26 @@ ul {
     transition-duration: 0.3s;
 }
 
+input[type="number"] {
+    text-align: center;
+}
+
+.minus, .plus {
+    user-select: none !important;
+}
+
+.minus:hover, .plus:hover {
+    cursor: pointer;
+}
+
+.stock {
+    transition-duration: 0.2s;
+}
+
+.time {
+    text-align: center;
+}
+
 @media screen and (max-width: 768px) {
     .head {
         margin-bottom: 10px;
@@ -80,5 +104,9 @@ ul {
 
     ul {
         margin-top: initial;
+    }
+
+    main a.btn {
+        margin-bottom: 20px;
     }
 }
